@@ -3,6 +3,7 @@ import { View, Text, SafeAreaView, StatusBar, Image, TouchableOpacity, Modal, An
 import { COLORS, SIZES } from '../constants';
 import data from '../data/QuizData';
 import { mdiCheckBold } from '@mdi/js';
+// import Icon from '@mdi/react';
 // import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Quiz = () => {
@@ -82,7 +83,7 @@ const Quiz = () => {
                 {/* Question */}
                 <Text style={{
                     color: COLORS.white,
-                    fontSize: 30
+                    fontSize: 25
                 }}>{allQuestions[currentQuestionIndex]?.question}</Text>
             </View>
         )
@@ -108,14 +109,14 @@ const Quiz = () => {
                                     : option == currentOptionSelected
                                         ? COLORS.error + '20'
                                         : COLORS.secondary + '20',
-                                height: 60, borderRadius: 20,
+                                height: 50, borderRadius: 20,
                                 flexDirection: 'row',
                                 alignItems: 'center', justifyContent: 'space-between',
                                 paddingHorizontal: 20,
-                                marginVertical: 10
+                                marginVertical: 8
                             }}
                         >
-                            <Text style={{ fontSize: 20, color: COLORS.white }}>{option}</Text>
+                            <Text style={{ fontSize: 18, color: COLORS.white }}>{option}</Text>
 
                             {/* Show Check Or Cross Icon based on correct answer*/}
                             {
@@ -125,6 +126,12 @@ const Quiz = () => {
                                         backgroundColor: COLORS.success,
                                         justifyContent: 'center', alignItems: 'center'
                                     }}>
+                                        {/* <MaterialCommunityIcons name="check" style={{
+                                            color: COLORS.success,
+                                            fontSize: 18
+                                        }}></MaterialCommunityIcons> */}
+                                        {/* <Icon></Icon> */}
+
                                         {/* <mdiCheckBold style={{
                                             color: COLORS.white,
                                             fontSize: 20
@@ -138,7 +145,7 @@ const Quiz = () => {
                                     }}>
                                         {/* <MaterialCommunityIcons name="close" style={{
                                             color: COLORS.white,
-                                            fontSize: 20
+                                            fontSize: 18
                                         }} /> */}
                                     </View>
                                 ) : null
@@ -199,6 +206,7 @@ const Quiz = () => {
     return (
         <SafeAreaView style={{
             flex: 1
+            // height: '100%'
         }}>
             <StatusBar barStyle="light-content" backgroundColor={COLORS.primary} />
             <View style={{

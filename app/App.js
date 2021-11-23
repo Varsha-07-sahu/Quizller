@@ -6,13 +6,20 @@
  * @flow strict-local
  */
 
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
+import MyStack from '../navigation';
 import { Quiz } from './screens';
+import Home from './screens/home';
 
 const App = () => {
 
   return (
-    <Quiz />
+    // <Quiz />
+    <NavigationContainer>
+      <MyStack />
+    </NavigationContainer>
+
   );
 };
 
